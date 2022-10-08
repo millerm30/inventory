@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Michael Miller">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="./stylesheets/main.css">
+  <title>Tool Inventory</title>
+</head>
+<body>
+  <main>
+    <div id="heading">
+      <img src="./images/favicon.png" alt="Tool Inventory Logo">
+      <h1>Tool Inventory</h1>
+    </div>
+    <form id="entryForm">
+      <label>Tool Type: </label>
+      <input type="text" id="name-input" placeholder="Enter tool type">
+      <button id="add-name-btn">Add Tool</button>
+    </form>
+    <table id="table">
+      <thead>
+        <th>ID</th>
+        <th>Tool Type</th>
+        <th>Date Added</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <section hidden id="update-row">
+      <label>Name:</label>
+      <input type="text" id="update-name-input" placeholder="Enter name">
+      <button id="update-row-btn">Update Name</button>
+      <button id="cancel-update-btn">Cancel</button>
+    </section>
+  </main>
+  <script src="./javascript/index.js"></script>
+</body>
+</html>

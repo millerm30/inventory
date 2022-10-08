@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#heading h1 {
+  font-size: 3rem;
+  color: #333;
+  margin: 0 1rem;
+}
+
+#heading img {
+  width: 3rem;
+  height: 3rem;
+}
+
+table {
+  margin: 50px auto;
+  width: 100%;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: #0084b8;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+th, td {
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: #c5c5c5;
+}
+
+th:first-of-type {
+  border-top-left-radius: 10px;
+}
+th:last-of-type {
+  border-top-right-radius: 10px;
+}
+tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+}
+
+#entryForm {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#entryForm input {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+#entryForm button {
+  margin: 5px 0;
+  padding: 10px 0px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  width: 6rem;
+}
+
+#entryForm button:hover {
+  background-color: #0084b8;
+}
+
+#search-input {
+  margin: 5px 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+#search-btn {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background-color: #0084b8;
+}
+
+.delete-row-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete-row-btn:hover {
+  background-color: #0084b8;
+}
+
+.edit-row-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit-row-btn:hover {
+  background-color: #0084b8;
+}
+
+#update-name-input {
+  margin: 5px 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+#update-row-btn {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#update-row-btn:hover {
+  background-color: #0084b8;
+}
+
+#cancel-update-btn {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#cancel-update-btn:hover {
+  background-color: #0084b8;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 95%;
+  }
+}
