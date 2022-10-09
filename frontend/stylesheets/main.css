@@ -12,7 +12,7 @@ body {
 }
 
 main {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   text-align: center;
 }
@@ -47,7 +47,7 @@ table, th, td {
 table th {
   background-color: #0084b8;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -84,6 +84,8 @@ tr:last-of-type td:last-of-type {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  width: 75%;
+  margin: 0 auto;
 }
 
 #entryForm input {
@@ -195,6 +197,9 @@ tr:last-of-type td:last-of-type {
 
 @media screen and (max-width: 768px) {
   main {
+    width: 95%;
+  }
+  #entryForm {
     width: 95%;
   }
 }

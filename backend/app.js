@@ -17,46 +17,46 @@ app.get('/', (request, response) => {
 })
 
 // create
-app.post('/insert', (req, res) => {
-  const { name } = req.body;
+app.post('/insert', (request, response) => {
+  const { name, brand, serial, model } = request.body;
   const db = dbService.getDbServiceInstance();
 
-  const result = db.insertNewName(name);
+  const result = db.insertNewName(name, brand, serial, model);
   result
-    .then(data => res.json({ data: data }))
-    .catch(err => console.log(err));
+    .then(data => response.json({ data: data }))
+    .catch(error => console.log(error));
 });
 
 // read
-app.get('/getAll', (req, res) => {
+app.get('/getAll', (request, response) => {
   const db = dbService.getDbServiceInstance();
   const result = db.getAllData()
 
   result
-  .then(data => res.json({ data: data }))
-  .catch (err => console.log(err));
+  .then(data => response.json({ data: data }))
+  .catch (error => console.log(error));
 });
 
 // update
-app.patch('/update', (req, res) => {
-  const { id, name } = req.body;
+app.patch('/update', (request, response) => {
+  const { id, name } = request.body;
   const db = dbService.getDbServiceInstance();
   const result = db.updateNameById(id, name);
 
   result
-  .then(data => res.json({ success: data }))
-  .catch(err => console.log(err));
+  .then(data => response.json({ success: data }))
+  .catch(error => console.log(error));
 });
 
 // delete
-app.delete('/delete/:id', (req, res) => {
-  const { id } = req.params;
+app.delete('/delete/:id', (request, response) => {
+  const { id } = request.params;
   const db = dbService.getDbServiceInstance();
   const result = db.deleteRowById(id);
 
   result
-    .then(data => res.json({ success: data }))
-    .catch(err => console.log(err));
+    .then(data => response.json({ success: data }))
+    .catch(error => console.log(error));
 });
 
 // server listening

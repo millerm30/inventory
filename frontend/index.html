@@ -17,13 +17,22 @@
     </div>
     <form id="entryForm">
       <label>Tool Type: </label>
-      <input type="text" id="name-input" placeholder="Enter tool type">
+      <input type="text" id="name-input" name="name" placeholder="Enter tool type">
+      <label>Tool Brand: </label>
+      <input type="text" id="brand-input" name="brand" placeholder="Enter tool brand">
+      <label>Tool Model: </label>
+      <input type="text" id="model-input" name="model" placeholder="Enter tool model">
+      <label>Serial Number: </label>
+      <input type="text" id="serial-input" name="serial" placeholder="Enter serial number">
       <button id="add-name-btn">Add Tool</button>
     </form>
     <table id="table">
       <thead>
         <th>ID</th>
         <th>Tool Type</th>
+        <th>Tool Brand</th>
+        <th>Tool Model</th>
+        <th>Serial Number</th>
         <th>Date Added</th>
         <th>Delete</th>
         <th>Edit</th>
@@ -32,8 +41,8 @@
     </table>
     <section hidden id="update-row">
       <label>Name:</label>
-      <input type="text" id="update-name-input" placeholder="Enter name">
-      <button id="update-row-btn">Update Name</button>
+      <input type="text" id="update-name-input" placeholder="Enter tool type">
+      <button id="update-row-btn">Update Type</button>
       <button id="cancel-update-btn">Cancel</button>
     </section>
   </main>

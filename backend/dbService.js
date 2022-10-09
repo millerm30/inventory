@@ -11,9 +11,9 @@ const connection = mysql2.createConnection({
   port: process.env.DB_PORT
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.log(err.message);
+connection.connect((error) => {
+  if (error) {
+    console.log(error.message);
   } else {
     //console.log('db ' + connection.state);
   }
@@ -26,7 +26,7 @@ class DbService {
   async getAllData() {
     try {
       const response = await new Promise((resolve, reject) => {
-        const query = 'SELECT * FROM names';
+        const query = 'SELECT * FROM tools';
         connection.query(query, (error, results) => {
           if (error) reject(new Error(error.message));
           resolve(results);
@@ -37,12 +37,12 @@ class DbService {
       console.log(error);
     }
   }
-  async insertNewName(name) {
+  async insertNewName(name, brand, serial, model) {
     try {
       const dateAdded = new Date();
       const insertID = await new Promise((resolve, reject) => {
-        const query = "INSERT INTO names (name, date_added) VALUES (?, ?)";
-        connection.query(query, [name, dateAdded], (error, result) => {
+        const query = "INSERT INTO tools (name, date_added, brand, serial_number, model_number) VALUES (?, ?, ?, ?, ?)";
+        connection.query(query, [name, dateAdded, brand, serial, model], (error, result) => {
           if (error) reject(new Error(error.message));
           resolve(result.insertId);
         });
@@ -50,8 +50,11 @@ class DbService {
       return {
         id: insertID,
         name: name,
-        dateAdded: dateAdded
-        };
+        dateAdded: dateAdded,
+        brand: brand,
+        serial: serial,
+        model: model
+      };
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +63,7 @@ class DbService {
     try {
       id = parseInt(id, 10);
       const response = await new Promise((resolve, reject) => {
-        const query = "DELETE FROM names WHERE id = ?";
+        const query = "DELETE FROM tools WHERE id = ?";
         connection.query(query, [id], (error, result) => {
           if (error) reject(new Error(error.message));
           resolve(result.affectedRows);
@@ -76,7 +79,7 @@ class DbService {
     try {
       id = parseInt(id, 10);
       const response = await new Promise((resolve, reject) => {
-        const query = "UPDATE names SET name = ? WHERE id = ?";
+        const query = "UPDATE tools SET name = ? WHERE id = ?";
         connection.query(query, [name, id], (error, result) => {
           if (error) reject(new Error(error.message));
           resolve(result.affectedRows);

@@ -64,15 +64,24 @@ updateBtn.onclick = function () {
 
 addBtn.onclick = function() {
   const nameInput = document.querySelector("#name-input");
+  const brandInput = document.querySelector("#brand-input");
+  const serialInput = document.querySelector("#serial-input");
+  const modelInput = document.querySelector("#model-input");
   const name = nameInput.value;
+  const brand = brandInput.value;
+  const serial = serialInput.value;
+  const model = modelInput.value;
   nameInput.value = "";
+  brandInput.value = "";
+  serialInput.value = "";
+  modelInput.value = "";
 
   fetch('http://localhost:5000/insert', {
     headers: {
       'Content-type': 'application/json'
     },
     method: 'POST',
-    body: JSON.stringify({ name: name }),
+    body: JSON.stringify({ name: name, brand: brand, serial: serial, model: model }),
   })
   .then(res => res.json())
   .then(data => insertRowIntoTable(data['data']));
@@ -111,10 +120,13 @@ function loadHTMLTable(data) {
 
   let tableHtml = "";
 
-  data.forEach(function ({ id, name, date_added }) {
+  data.forEach(function ({ id, name, brand, date_added, serial_number, model_number }) {
     tableHtml += "<tr>";
     tableHtml += `<td>${id}</td>`;
     tableHtml += `<td>${name}</td>`;
+    tableHtml += `<td>${brand}</td>`;
+    tableHtml += `<td>${model_number}</td>`;
+    tableHtml += `<td>${serial_number}</td>`;
     tableHtml += `<td>${new Date(date_added).toLocaleString()}</td>`;
     tableHtml += `<td><button class="delete-row-btn" data-id=${id}>Delete</button></td>`;
     tableHtml += `<td><button class="edit-row-btn" data-id=${id}>Edit</button></td>`;
