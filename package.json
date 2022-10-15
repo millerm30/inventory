@@ -1,0 +1,22 @@
+{
+  "name": "inventory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/millerm30/inventory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/millerm30/inventory/issues"
+  },
+  "homepage": "https://github.com/millerm30/inventory#readme",
+  "engines": {
+    "node": "16.x"
+  }
+}
