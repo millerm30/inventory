@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
+const PORT = process.env.PORT || 3030;
 
 const dbService = require('./dbService');
 
@@ -60,4 +61,4 @@ app.delete('/delete/:id', (request, response) => {
 });
 
 // server listening
-app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
