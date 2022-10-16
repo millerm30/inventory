@@ -120,14 +120,13 @@ function loadHTMLTable(data) {
 
   let tableHtml = "";
 
-  data.forEach(function ({ id, name, brand, date_added, serial_number, model_number }) {
+  data.forEach(function ({ id, name, brand, serial_number, model_number }) {
     tableHtml += "<tr>";
     tableHtml += `<td>${id}</td>`;
     tableHtml += `<td>${name}</td>`;
     tableHtml += `<td>${brand}</td>`;
     tableHtml += `<td>${model_number}</td>`;
     tableHtml += `<td>${serial_number}</td>`;
-    tableHtml += `<td>${new Date(date_added).toLocaleString()}</td>`;
     tableHtml += `<td><button class="delete-row-btn" data-id=${id}>Delete</button></td>`;
     tableHtml += `<td><button class="edit-row-btn" data-id=${id}>Edit</button></td>`;
     tableHtml += "</tr>";

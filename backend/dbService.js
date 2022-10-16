@@ -39,10 +39,9 @@ class DbService {
   }
   async insertNewName(name, brand, serial, model) {
     try {
-      const dateAdded = new Date();
       const insertID = await new Promise((resolve, reject) => {
-        const query = "INSERT INTO tools (name, date_added, brand, serial_number, model_number) VALUES (?, ?, ?, ?, ?)";
-        connection.query(query, [name, dateAdded, brand, serial, model], (error, result) => {
+        const query = "INSERT INTO tools (name, brand, serial_number, model_number) VALUES (?, ?, ?, ?)";
+        connection.query(query, [name, brand, serial, model], (error, result) => {
           if (error) reject(new Error(error.message));
           resolve(result.insertId);
         });
@@ -50,7 +49,6 @@ class DbService {
       return {
         id: insertID,
         name: name,
-        dateAdded: dateAdded,
         brand: brand,
         serial: serial,
         model: model
